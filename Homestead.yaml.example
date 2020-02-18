@@ -10,8 +10,6 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/code
-      to: /home/vagrant/code
     - map: /workspcace/quality-checker-api
       to: /var/www/quality-checker-api
       type: "nfs"
