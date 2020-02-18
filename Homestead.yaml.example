@@ -3,7 +3,7 @@ ip: "192.168.10.10"
 memory: 2048
 cpus: 2
 provider: virtualbox
-
+name: quality-checker-vm
 authorize: ~/.ssh/id_rsa.pub
 
 keys:
@@ -12,16 +12,18 @@ keys:
 folders:
     - map: ~/code
       to: /home/vagrant/code
-
+    - map: /workspcace/quality-checker-api
+      to: /var/www/quality-checker-api
+      type: "nfs"
 sites:
-    - map: homestead.test
-      to: /home/vagrant/code/public
+    - map: quality-checker.local
+      to: /var/www/quality-checker-api
 
 databases:
     - homestead
 
 features:
-    - mariadb: false
+    - mariadb: true
     - ohmyzsh: false
     - webdriver: false
 
